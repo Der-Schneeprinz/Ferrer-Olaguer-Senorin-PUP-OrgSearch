@@ -170,7 +170,6 @@ public class ActivityCreateUser {
 		txtEmail.setColumns(10);
 		
 		txtPassword = new JPasswordField();
-		txtPassword.setEchoChar('*');
 		txtPassword.setFont(new Font("Calibri", Font.PLAIN, 20));
 		txtPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLUE));
 		txtPassword.setOpaque(false);
@@ -238,7 +237,7 @@ public class ActivityCreateUser {
 				if(txtEmail.getText().equals("")) {
 					txtEmail.setText("  Email...");
 				}
-				if(txtPassword.getPassword().equals("")) {
+				if(txtPassword.getText().equals("")) {
 					txtPassword.setText("  Password...");
 				}
 			}
@@ -310,7 +309,7 @@ public class ActivityCreateUser {
 				if(txtEmail.getText().equals("")) {
 					txtEmail.setText("  Email...");
 				}
-				if(txtPassword.getPassword().equals("")) {
+				if(txtPassword.getText().equals("")) {
 					txtPassword.setText("  Password...");
 				}
 			}
@@ -336,7 +335,7 @@ public class ActivityCreateUser {
 				if(txtCollege.getText().equals("")) {
 					txtCollege.setText("  College...");
 				}
-				if(txtPassword.getPassword().equals("")) {
+				if(txtPassword.getText().equals("")) {
 					txtPassword.setText("  Password...");
 				}
 			}
