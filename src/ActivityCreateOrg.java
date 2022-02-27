@@ -2,7 +2,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -35,7 +34,6 @@ public class ActivityCreateOrg {
 	private JTextField txtOrganizationName;
 	private JTextField txtOrganizationType;
 	private JTextField txtOrganizationEmail;
-	private JPasswordField txtPassword;
 	
 	//Connection Variables
 	private Connection objConn;
@@ -155,23 +153,14 @@ public class ActivityCreateOrg {
 		txtOrganizationEmail.setBounds(65, 427, 303, 30);
 		frmActivityCreateOrg.getContentPane().add(txtOrganizationEmail);
 		txtOrganizationEmail.setColumns(10);
-		
-		txtPassword = new JPasswordField();
-		txtPassword.setFont(new Font("Calibri", Font.PLAIN, 20));
-		txtPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLUE));
-		txtPassword.setOpaque(false);
-		txtPassword.setText("  Password...");
-		txtPassword.setBounds(65, 478, 303, 30);
-		frmActivityCreateOrg.getContentPane().add(txtPassword);
-		txtPassword.setColumns(10);
-		
+				
 		txtDesc.setLineWrap(true);
 		txtDesc.setFont(new Font("Calibri", Font.PLAIN, 20));
 		txtDesc.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLUE));
 		txtDesc.setOpaque(false);
 		txtDesc.setRows(2);
 		txtDesc.setText("  Add Organization Description...");
-		txtDesc.setBounds(65, 530, 303, 60);
+		txtDesc.setBounds(65, 478, 303, 60);
 		frmActivityCreateOrg.getContentPane().add(txtDesc);
 		txtDesc.setColumns(10);
 		
@@ -204,9 +193,6 @@ public class ActivityCreateOrg {
 				if(txtOrganizationEmail.getText().equals("")) {
 					txtOrganizationEmail.setText("  Organization Email...");
 				}
-				if(txtPassword.getText().equals("")) {
-					txtPassword.setText("  Password...");
-				}
 				if(txtDesc.getText().equals("")) {
 					txtDesc.setText("  Add Organization Description...");
 				}
@@ -225,9 +211,6 @@ public class ActivityCreateOrg {
 				if(txtOrganizationEmail.getText().equals("")) {
 					txtOrganizationEmail.setText("  Organization Email...");
 				}
-				if(txtPassword.getText().equals("")) {
-					txtPassword.setText("  Password...");
-				}
 				if(txtDesc.getText().equals("")) {
 					txtDesc.setText("  Add Organization Description...");
 				}
@@ -245,9 +228,6 @@ public class ActivityCreateOrg {
 				}
 				if(txtOrganizationEmail.getText().equals("")) {
 					txtOrganizationEmail.setText("  Organization Email...");
-				}
-				if(txtPassword.getText().equals("")) {
-					txtPassword.setText("  Password...");
 				}
 				if(txtDesc.getText().equals("")) {
 					txtDesc.setText("  Add Organization Description...");
@@ -269,35 +249,11 @@ public class ActivityCreateOrg {
 				if(txtOrganizationType.getText().equals("")) {
 					txtOrganizationType.setText("  OrganizationType...");
 				}
-				if(txtPassword.getText().equals("")) {
-					txtPassword.setText("  Password...");
-				}
 				if(txtDesc.getText().equals("")) {
 					txtDesc.setText("  Add Organization Description...");
 				}
 			}
 		});	
-		//makes content of textfield to disappear when mouse
-		txtPassword.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent objME) {
-				txtPassword.setText(null);
-				if(txtOrganizationID.getText().equals("")) {
-					txtOrganizationID.setText("  Organization ID...");
-				}
-				if(txtOrganizationName.getText().equals("")) {
-					txtOrganizationName.setText("  Organization Name...");
-				}
-				if(txtOrganizationType.getText().equals("")) {
-					txtOrganizationType.setText("  OrganizationType...");
-				}
-				if(txtOrganizationEmail.getText().equals("")) {
-					txtOrganizationEmail.setText("  Organization Email...");
-				}
-				if(txtDesc.getText().equals("")) {
-					txtDesc.setText("  Add Organization Description...");
-				}
-			}
-		});
 		//makes content of textfield to disappear when mouse
 		txtDesc.addMouseListener(new MouseAdapter( ) {
 			public void mouseClicked(MouseEvent objME) {
@@ -314,9 +270,6 @@ public class ActivityCreateOrg {
 				if(txtOrganizationEmail.getText().equals("")) {
 					txtOrganizationEmail.setText("  Organization Email...");
 				}
-				if(txtPassword.getText().equals("")) {
-					txtPassword.setText("  Password...");
-				}
 			}
 		});
 		
@@ -327,7 +280,6 @@ public class ActivityCreateOrg {
 				String strOrganizationName1 = txtOrganizationName.getText().trim();
 				String strOrganizationType1 = txtOrganizationType.getText().trim();
 				String strOrganizationEmail1 = txtOrganizationEmail.getText().trim();
-				String strPassword1 = txtPassword.getText().trim();
 				String strDesc1 = txtDesc.getText();
 				boolean boolError = false;
 				try {
@@ -367,10 +319,6 @@ public class ActivityCreateOrg {
 								+ strOrganizationEmail1
 								+ "'"
 								+ ","
-//								+ "'"
-//								+ strPassword1
-//								+ "'"
-//								+ ","
 								+ "'"
 								+ strDesc1
 								+ "'"
